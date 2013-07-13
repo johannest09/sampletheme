@@ -217,7 +217,7 @@ header.main-header { width: 100%; height: 110px; background: #fff; border-bottom
 	.contact { display: block; width: 160px; float: right; margin-top: 20px; font-size: 16px; font-weight: 600; line-height: 1.5; color: #a7a7a7;
 		span { display: block; float: right; width: 30px; height: 25px; background: url(@spritepath) -256px 0 no-repeat; }
 	}
-	form.searchform { margin-top: 15px; float: right; width: 180px; height: 30px; border: 1px solid @link-color; 
+	form.searchform { margin-top: 15px; float: right; width: 180px; height: 30px; border: 1px solid @link-color; .rounded-corners(2px);
 		input#s { float: left; width: 145px; height: 30px; border: 0; background: transparent; font-size: 16px; padding-left: 5px; }
 		input#searchsubmit { width: 30px; height: 30px; border: 0; background: url(@spritepath) -320px 0 no-repeat; text-indent: -9999px; cursor: pointer; overflow: hidden; }
 	}
@@ -302,18 +302,14 @@ nav.mainMenu { padding: 0 5px; float: right; position: absolute; right: 0; botto
 	========================================================================== */
 
 body.home { 
-	#main { min-height: 600px; z-index: 50; background: #fff; .box-shadow(0,2px,6px,0.3); background: #fff ;.wrap; margin-bottom: 50px; margin-top: -30px;
+	#main { min-height: 600px; z-index: 50; background: #fff; .box-shadow(0,2px,6px,0.3); background: #fff ; .wrap; margin-bottom: 50px; margin-top: -30px;
 		.flag-stripe { width: 100%; height: 30px; background: #00529A; 
 			.white { width: 30px; height: 100%; float: right; margin-right: 30px; background: #fff; 
 				.red { width: 13px; height: 100%; float: left; margin-left: 8px; background: #BD2221; }
 			}
 		}
 		.maincontent { .clearfix;
-			article {
-				header.entry-header {
-					h2.entry-title {  }
-				}
-			}
+
 			.shortcut-links { position: relative; padding: 20px;
 				.news-archive { display: block; width: 100px; padding: 4px 14px; font-size: 15px; font-weight: 600; text-align: center; color: @link-color; background: rgb(235, 235, 235); border-radius: 3px; border: 1px solid #ccc;}
 				.links-header { position: relative; margin-bottom: 20px; border-bottom: 1px solid @border-color; .clearfix;
@@ -336,7 +332,12 @@ body.home {
 	========================================================================== */
 
 body { 
-	#main { line-height: 1.4; margin-bottom: 20px; .wrap; margin-bottom: 20px;
+	#main { line-height: 1.4; .wrap; margin-bottom: 40px;
+		article { margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid @border-color;
+			h2.entry-title { margin-bottom: 5px; }
+			.entry-meta { margin-bottom: 5px; }
+			.moretag { font-weight: bold; }
+		}
 		.content { margin: 0 20px 0 40px; 
 			.main {
 				p { margin-bottom: 10px; }
@@ -354,7 +355,7 @@ body.home {
 
 	#main { padding-bottom: 30px;
 		.maincontent { padding: 20px;
-			article { padding: 20px;
+			article { padding: 20px; border-bottom: 0;
 				header.entry-header { height: auto; margin-bottom: 10px; background: none; line-height: 1.2;
 					h2.entry-title { font-size: 20px; }
 					.entry-meta { margin-bottom: 10px; font-size: 13px; color: @link-color; 
@@ -374,13 +375,8 @@ body.home {
 		News - archive
 	========================================================================== */
 
-body.page {
+body {
 	#main {
-		article { margin-bottom: 25px; 
-			h2.entry-title { margin-bottom: 5px; }
-			.entry-meta { margin-bottom: 5px; border-bottom: 1px solid #afafaf; }
-			.moretag { font-weight: bold; }
-		}
 		.main.news {
 			.archive-news { padding: 15px; margin-bottom: 20px; border: 1px solid @border-color; .rounded-corners(3px); .clearfix;
 				.archive-title { float: left; margin: 6px 20px 0 0; font-size: 18px; color: #285274; }
@@ -391,11 +387,16 @@ body.page {
 			}
 			article { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid @border-color;
 				.entry-meta { border: 0; }
-				//.moretag { display: none; }
 				.more { display: block; margin-top: 5px; }
 			} 
 
 		}
+		/* Paging */
+		.paging { padding-top: 10px;
+			.next-posts { float: right; }
+			.prev-posts { float: left; }
+		}
+		
 	}
 
 }
@@ -412,31 +413,10 @@ body.archive {
 }
 
 .archive-dropdown { float: left;
-
-	select {
-		padding: 6px 35px 6px 10px;
-		margin: 0;
-		-webkit-border-radius:4px;
-		-moz-border-radius:4px;
-		border-radius:4px;
-		-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-		-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-		box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-		/* background: #f8f8f8; */
-		color:#285274;
-		border:1px solid #285274;
-		outline:none;
-		display: inline-block;
-		-webkit-appearance:none;
-		-moz-appearance:none;
-		appearance:none;
-		cursor:pointer;
-
-		font-size: 16px;
-		font-family: 'Open Sans';
+	select {padding: 8px;margin: 0; .rounded-corners(4px); -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;color:#285274;border:1px solid #285274;outline:none;display: inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;font-size: 16px;font-family: 'Open Sans';
+		option { margin: 0 6px; }
 
 	}
-	
 }
 
 
@@ -457,6 +437,18 @@ body.single {
 	}
 }
 
+/* =============================================================================
+		Search page
+	========================================================================== */
+
+body.search { 
+
+	form.search-again { margin: 15px 10px;
+		input#s { width: 300px; height: 30px; margin-right: 5px; border: 0; font-size: 16px; padding-left: 5px; border: 1px solid @link-color; .rounded-corners(2px); }
+		input#searchsubmit { padding: 5px 14px;  color: #fff; background: @link-color; font-family: 'Open Sans'; font-weight: 600; .rounded-corners(2px); }
+	}
+
+}
 
 /* =============================================================================
 		Footer 

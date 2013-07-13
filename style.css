@@ -352,6 +352,9 @@ header.main-header form.searchform {
   width: 180px;
   height: 30px;
   border: 1px solid #285274;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
 }
 header.main-header form.searchform input#s {
   float: left;
@@ -666,13 +669,13 @@ body.home #main .maincontent .shortcut-links ul li span {
 
 body #main {
   line-height: 1.4;
-  margin-bottom: 20px;
   width: 960px;
   margin: 0 auto;
   position: relative;
   min-height: 100%;
   *zoom: 1;
   clear: both;
+  margin-bottom: 40px;
 }
 body #main:before,
 body #main:after {
@@ -681,6 +684,20 @@ body #main:after {
 }
 body #main:after {
   clear: both;
+}
+body #main article {
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #afafaf;
+}
+body #main article h2.entry-title {
+  margin-bottom: 5px;
+}
+body #main article .entry-meta {
+  margin-bottom: 5px;
+}
+body #main article .moretag {
+  font-weight: bold;
 }
 body #main .content {
   margin: 0 20px 0 40px;
@@ -703,6 +720,7 @@ body.home #main .maincontent {
 }
 body.home #main .maincontent article {
   padding: 20px;
+  border-bottom: 0;
 }
 body.home #main .maincontent article header.entry-header {
   height: auto;
@@ -737,20 +755,7 @@ body.home #main .maincontent article .more {
 		News - archive
 	========================================================================== */
 
-body.page #main article {
-  margin-bottom: 25px;
-}
-body.page #main article h2.entry-title {
-  margin-bottom: 5px;
-}
-body.page #main article .entry-meta {
-  margin-bottom: 5px;
-  border-bottom: 1px solid #afafaf;
-}
-body.page #main article .moretag {
-  font-weight: bold;
-}
-body.page #main .main.news .archive-news {
+body #main .main.news .archive-news {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid #afafaf;
@@ -760,39 +765,48 @@ body.page #main .main.news .archive-news {
   *zoom: 1;
   clear: both;
 }
-body.page #main .main.news .archive-news:before,
-body.page #main .main.news .archive-news:after {
+body #main .main.news .archive-news:before,
+body #main .main.news .archive-news:after {
   content: "";
   display: table;
 }
-body.page #main .main.news .archive-news:after {
+body #main .main.news .archive-news:after {
   clear: both;
 }
-body.page #main .main.news .archive-news .archive-title {
+body #main .main.news .archive-news .archive-title {
   float: left;
   margin: 6px 20px 0 0;
   font-size: 18px;
   color: #285274;
 }
-body.page #main .main.news .entry-meta {
+body #main .main.news .entry-meta {
   margin-bottom: 10px;
   padding-bottom: 3px;
 }
-body.page #main .main.news .entry-content img {
+body #main .main.news .entry-content img {
   float: left;
   margin: 0 15px 5px 0;
 }
-body.page #main .main.news article {
+body #main .main.news article {
   margin-bottom: 10px;
   padding-bottom: 5px;
   border-bottom: 1px solid #afafaf;
 }
-body.page #main .main.news article .entry-meta {
+body #main .main.news article .entry-meta {
   border: 0;
 }
-body.page #main .main.news article .more {
+body #main .main.news article .more {
   display: block;
   margin-top: 5px;
+}
+body #main .paging {
+  padding-top: 10px;
+}
+body #main .paging .next-posts {
+  float: right;
+}
+body #main .paging .prev-posts {
+  float: left;
 }
 body.archive .archive-item {
   background: whitesmoke;
@@ -832,15 +846,14 @@ body.archive .back-to-archives {
   float: left;
 }
 .archive-dropdown select {
-  padding: 6px 35px 6px 10px;
+  padding: 8px;
   margin: 0;
+  border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  border-radius: 4px;
   -webkit-box-shadow: 0 3px 0 #cccccc, 0 -1px white inset;
   -moz-box-shadow: 0 3px 0 #cccccc, 0 -1px white inset;
   box-shadow: 0 3px 0 #cccccc, 0 -1px white inset;
-  /* background: #f8f8f8; */
   color: #285274;
   border: 1px solid #285274;
   outline: none;
@@ -851,6 +864,9 @@ body.archive .back-to-archives {
   cursor: pointer;
   font-size: 16px;
   font-family: 'Open Sans';
+}
+.archive-dropdown select option {
+  margin: 0 6px;
 }
 /* =============================================================================
 		News - single
@@ -870,6 +886,35 @@ body.single .news-item article header.entry-header .entry-meta {
 }
 body.single .news-item article .entry-content img {
   margin-bottom: 15px;
+}
+/* =============================================================================
+		Search page
+	========================================================================== */
+
+body.search form.search-again {
+  margin: 15px 10px;
+}
+body.search form.search-again input#s {
+  width: 300px;
+  height: 30px;
+  margin-right: 5px;
+  border: 0;
+  font-size: 16px;
+  padding-left: 5px;
+  border: 1px solid #285274;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+body.search form.search-again input#searchsubmit {
+  padding: 5px 14px;
+  color: white;
+  background: #285274;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
 }
 /* =============================================================================
 		Footer 

@@ -3,12 +3,12 @@
 		<div class="row">
 			<div class="span3">
 				<div class="left-panel">
-					<?php get_sidebar(); ?>
+					<?php get_template_part('subnavigation'); ?>
 				</div>
 			</div>
 			<div class="span9">
 				<div class="content">
-					<div class="heading"><h1><?php the_title(); ?></h1></div>
+					<?php the_title('<div class="heading"><h1>','</h1></div>'); ?>
 					<div class="main">
 						
 						<?php while ( have_posts() ): the_post(); ?>

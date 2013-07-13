@@ -50,6 +50,6 @@
 						<nav class="mainMenu" role="navigation">
 							<?php wp_nav_menu(array('menu' => 'MainMenu')); ?>
 						</nav>
-						</div>
+					</div>
 				</div>
 			</header>

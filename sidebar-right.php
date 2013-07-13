@@ -1,6 +1,6 @@
 
 <aside class="sidebar-right">
-	<a href="/?page_id=218" class="archive-page-link">Fréttasafn</a>
+	<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" class="archive-page-link">Fréttasafn</a>
 
 	<div class="latest-news">
 		<?php query_posts('category_name=frettir&showposts=4'); ?>

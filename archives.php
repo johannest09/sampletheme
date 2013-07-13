@@ -9,7 +9,7 @@ get_header(); ?>
 	<div class="row">
 		<div class="span3">
 			<div class="left-panel">
-				<?php get_sidebar(); ?>
+				<?php get_template_part('subnavigation'); ?>
 			</div>
 		</div>
 		<div class="span9">
@@ -29,15 +29,31 @@ get_header(); ?>
 							</select>
 		                </div>
 					</section>
-					
-					
-	                <section class="lates-news">
-	                	<?php query_posts(array('category_name' => 'frettir', 'showposts' => 5, 'order' => 'DESC')); ?>
-	                	<?php while ( have_posts() ) : the_post(); ?>
-				
-							<?php get_template_part( 'content', get_post_format() ); ?>
+						                
+	                <section class="latest-news">
+	                	
+                		<?php
+                		    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                			$tmp = $wp_query;
+                			$wp_query = null;
 
-						<?php endwhile; ?>
+                			$args = array(
+							    'order'            	=> 'DESC',
+							    'category_name'    	=> 'frettir',
+							    'posts_per_page'	=> 5,
+							    'paged'				=> $paged
+						    );
+                			$wp_query = new WP_Query($args); 
+
+                			while( $wp_query->have_posts() )
+                			{
+                				$wp_query->the_post();
+                				get_template_part('content', get_post_format() );
+                			}
+                			wp_reset_postdata();
+						?>
+						<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
+
 	                </section>	
 	            </div>	
 			</div>
