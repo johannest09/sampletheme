@@ -42,22 +42,22 @@
 			
 			<div class="span6">
 				<div class="shortcut-links">
-					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" title="Fleiri fréttir" class="news-archive">Fleiri fréttir</a>
-					
-					<div class="links-header">
-						<h2><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>">Fréttatenglar</a></h2>
-						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>" class="more-links">Sjá alla tengla</a>
+					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" title="Fleiri fréttir" class="news-archive-button">Fleiri fréttir &rarr;</a>
+					<div class="links">
+						<div class="links-header">
+							<h2><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>">Fréttatenglar</a></h2>
+							<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>" class="more-links">Sjá alla tengla</a>
+						</div>
+						<ul>
+							<?php query_posts('category_name=frettahlekkir&showposts=5'); ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<li>
+									<?php get_template_part( 'newslinks', get_post_format() ); ?>
+								</li>
+								<?php $count++; ?>
+							<?php endwhile; ?>
+						</ul>
 					</div>
-					<ul>
-						<?php query_posts('category_name=frettahlekkir&showposts=5'); ?>
-						<?php while ( have_posts() ) : the_post(); ?>
-							
-							<li>
-								<?php get_template_part( 'newslinks', get_post_format() ); ?>
-							</li>
-							<?php $count++; ?>
-						<?php endwhile; ?>
-					</ul>
 				</div>
 			</div>
 

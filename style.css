@@ -613,22 +613,20 @@ body.home #main .maincontent .shortcut-links {
   position: relative;
   padding: 20px;
 }
-body.home #main .maincontent .shortcut-links .news-archive {
+body.home #main .maincontent .shortcut-links .news-archive-button {
   display: block;
   width: 100px;
-  padding: 4px 14px;
+  padding: 6px 15px;
+  margin-bottom: 15px;
   font-size: 15px;
-  font-weight: 600;
   text-align: center;
-  color: #285274;
-  background: #ebebeb;
-  border-radius: 3px;
-  border: 1px solid #cccccc;
+  color: white;
+  background: #51a04a;
 }
 body.home #main .maincontent .shortcut-links .links-header {
   position: relative;
   margin-bottom: 20px;
-  border-bottom: 1px solid #afafaf;
+  border-bottom: 1px solid white;
   *zoom: 1;
   clear: both;
 }
@@ -642,10 +640,13 @@ body.home #main .maincontent .shortcut-links .links-header:after {
 }
 body.home #main .maincontent .shortcut-links .links-header h2 {
   float: left;
-  color: green;
   font-weight: bold;
 }
+body.home #main .maincontent .shortcut-links .links-header h2 a {
+  color: white;
+}
 body.home #main .maincontent .shortcut-links .links-header a.more-links {
+  color: white;
   position: absolute;
   right: 0;
   bottom: 10px;
@@ -662,6 +663,44 @@ body.home #main .maincontent .shortcut-links ul li span {
   display: block;
   width: 100px;
   float: left;
+}
+body.home #main .maincontent .shortcut-links .links {
+  background: #285274;
+  padding: 15px;
+}
+body.home #main .maincontent .shortcut-links .links .newslink {
+  *zoom: 1;
+  clear: both;
+}
+body.home #main .maincontent .shortcut-links .links .newslink:before,
+body.home #main .maincontent .shortcut-links .links .newslink:after {
+  content: "";
+  display: table;
+}
+body.home #main .maincontent .shortcut-links .links .newslink:after {
+  clear: both;
+}
+body.home #main .maincontent .shortcut-links .links .newslink .date {
+  display: block;
+  width: 25%;
+  display: inline;
+  float: left;
+  width: 22.916666667%;
+  margin: 0 1.041666667%;
+  min-height: 50px;
+  min-height: 0;
+  color: white;
+}
+body.home #main .maincontent .shortcut-links .links .newslink a {
+  display: block;
+  width: 75%;
+  display: inline;
+  float: left;
+  width: 72.916666667%;
+  margin: 0 1.041666667%;
+  min-height: 50px;
+  min-height: 0;
+  color: white;
 }
 /* =============================================================================
 		Content Subpage
@@ -749,7 +788,8 @@ body.home #main .maincontent article .entry-content img {
 body.home #main .maincontent article .more {
   display: block;
   float: right;
-  color: #285274;
+  color: #51a04a;
+  font-weight: 600;
 }
 /* =============================================================================
 		News - archive
@@ -848,9 +888,9 @@ body.archive .back-to-archives {
 .archive-dropdown select {
   padding: 8px;
   margin: 0;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   -webkit-box-shadow: 0 3px 0 #cccccc, 0 -1px white inset;
   -moz-box-shadow: 0 3px 0 #cccccc, 0 -1px white inset;
   box-shadow: 0 3px 0 #cccccc, 0 -1px white inset;
@@ -858,9 +898,7 @@ body.archive .back-to-archives {
   border: 1px solid #285274;
   outline: none;
   display: inline-block;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  /* -webkit-appearance:none;-moz-appearance:none;appearance:none; */
   cursor: pointer;
   font-size: 16px;
   font-family: 'Open Sans';
