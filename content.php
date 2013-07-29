@@ -20,24 +20,21 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php sampletheme_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			</div>
 		<?php endif; ?>
 
-		
-	</header><!-- .entry-header -->
+	</header>
 	
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+		</div>
 	<?php else : ?>
-
 	<div class="entry-content">
 		<?php the_post_thumbnail(); ?>
-		<!--?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sampletheme' ) ); ?-->
-		<?php the_excerpt(); ?>
+		<?php echo excerpt(50); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampletheme' ) . '</span>', 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+	</div>
 	<?php endif; ?>
 	<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'sampletheme' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark" class="more">Nánar</a>
 	

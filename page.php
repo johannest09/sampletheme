@@ -20,6 +20,11 @@
 						<?php if(is_page($page->ID)) : ?>
 							<?php get_template_part( 'external', 'links', get_post_format() ); ?>
 						<?php endif; ?>
+
+						<?php $page = get_page_by_title("Fundargerðir"); ?>
+						<?php if(is_page($page->ID)) : ?>
+							<?php get_template_part("fundargerdir"); ?>
+						<?php endif; ?>
 	
 					</div>
 				</div>

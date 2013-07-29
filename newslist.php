@@ -26,12 +26,12 @@
 	
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+			<?php echo excerpt(25); ?>
 		</div><!-- .entry-summary -->
 	<?php else : ?>
 
 	<div class="entry-content">
-		<?php the_excerpt(); ?>
+		<?php echo excerpt(25); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 	
