@@ -31,7 +31,11 @@
 		</div>
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_post_thumbnail(); ?>
+		<?php 
+			if(has_post_thumbnail()) {
+				the_post_thumbnail('thumbnail');
+			}
+		?>
 		<?php echo excerpt(50); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampletheme' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div>

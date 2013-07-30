@@ -79,6 +79,7 @@ function sampletheme_link_date() {
 }
 endif;
 
+/*
 add_theme_support( 'custom-header', $custom_header_support );
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -90,6 +91,7 @@ if ( ! function_exists( 'get_custom_header' ) ) {
     add_custom_image_header( $custom_header_support['wp-head-callback'], $custom_header_support['admin-head-callback'], $custom_header_support['admin-preview-callback'] );
     add_custom_background();
 }
+*/
 
 
 // Replaces the excerpt "more" text by a link
@@ -143,14 +145,18 @@ function content($limit) {
 }
 
 
-if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
-}
-
 
 // add post-thumbnail functionality
-if (function_exists('add_theme_support')) { add_theme_support('post-thumbnails'); }
 
-set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails, set this to be your default size
-add_image_size( 'single-post-image', 700, 9999 ); // Custom size that will crop the image to fit the proportion
-add_image_size( 'custom-2', 300, 200, false ); // Default is false, "soft proportional crop"
+if (function_exists('add_theme_support')) { 
+    add_theme_support('post-thumbnails');
+    set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails, set this to be your default size 
+    //add_image_size( 'single-post-image', 665, 9999 );
+}
+/*
+if(function_exists('add_image_size')) {
+    add_image_size( 'single-post-image', 665, 9999 ); // Custom size that will crop the image to fit the proportion
+    add_image_size( 'test-size', 456, 457 );
+    //add_image_size( 'custom-2', 300, 200, false ); // Default is false, "soft proportional crop"
+}
+*/

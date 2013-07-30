@@ -42,7 +42,7 @@
 			
 			<div class="span6">
 				<div class="shortcut-links">
-					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" title="Fleiri fréttir" class="news-archive-button">Fleiri fréttir &rarr;</a>
+					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" title="Fleiri fréttir" class="news-archive-button">Fleiri fréttir</a>
 					<div class="links">
 						<div class="links-header">
 							<h2><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>">Fréttatenglar</a></h2>

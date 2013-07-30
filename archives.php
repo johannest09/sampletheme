@@ -31,7 +31,6 @@ get_header(); ?>
 					</section>
 						                
 	                <section class="latest-news">
-	                	
                 		<?php
                 		    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                 			$tmp = $wp_query;
@@ -53,12 +52,12 @@ get_header(); ?>
                 			wp_reset_postdata();
 						?>
 						<?php include (TEMPLATEPATH . '/inc/nav.php' ); ?>
-
 	                </section>	
 	            </div>	
 			</div>
 		</div>
 	</div>
+	<div class="flag-stripe"><span class="white"><span class="red"></span></span>
 </div>
 
 <?php get_footer() ?>

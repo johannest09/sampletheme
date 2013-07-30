@@ -32,6 +32,7 @@
 					?>
 				</div>
 			</div>
+			<div class="flag-stripe"><span class="white"><span class="red"></span></span>
 		</div><!-- #main -->
 
 <?php get_footer(); ?>	
