@@ -25,7 +25,6 @@
 	<?php else : ?>
 		<h2>Ekkert fannst</h2>
 	<?php endif; ?>
-	<div class="flag-stripe"><span class="white"><span class="red"></span></span>
 	
 </div>
 

@@ -39,8 +39,8 @@
 				<div class="wrap">
 					<div class="row">
 						<div class="span4"><a href="/" class="logo" title="Heim"><img src="/wp-content/uploads/2013/05/logo.png" alt="heim" /></a></div>
-						<div class="span5"><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Hafðu samband' ) ) ); ?>" class="contact" title="hafa samband">Hafa samband<span class="mail"></span></a></div>
-						<div class="span3">
+						<!--div class="span5"><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Hafðu samband' ) ) ); ?>" class="contact" title="hafa samband">Hafa samband<span class="mail"></span></a></div-->
+						<div class="span8">
 							<form action="/" method="get" class="searchform">
 								<input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" placeholder="Leitarorð" />
 								<input type="submit" id="searchsubmit" />

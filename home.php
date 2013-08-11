@@ -21,45 +21,44 @@
 		     }
 		 endwhile; endif; ?>
 	</ul>
-	
+	<div class="flag-stripe"><div class="white-stripe"><div class="red-stripe"></div></div></div>
 </div>
+<div id="main">
 
-	<div id="main">
+	<div class="flag-stripe"><span class="white"><span class="red" /></span></div>
 
-		<div class="flag-stripe"><span class="white"><span class="red" /></span></div>
-
-			<div class="maincontent">
+		<div class="maincontent">
+		
+		<?php $count = 1; ?>
+		<?php query_posts(array('category_name' => 'frettir', 'showposts' => 3, 'order' => 'DESC')); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 			
-			<?php $count = 1; ?>
-			<?php query_posts(array('category_name' => 'frettir', 'showposts' => 3, 'order' => 'DESC')); ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				
-				<div class="span6 <?php if($count % 3 == 0) echo 'clearfix'; ?>" >
-					<?php get_template_part( 'content', get_post_format() ); ?>
-				</div>
-				<?php $count++; ?>
-			<?php endwhile; ?>
-			
-			<div class="span6">
-				<div class="shortcut-links">
-					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" title="Fleiri fréttir" class="news-archive-button">Fleiri fréttir</a>
-					<div class="links">
-						<div class="links-header">
-							<h2><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>">Fréttatenglar</a></h2>
-							<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>" class="more-links">Sjá alla tengla</a>
-						</div>
-						<ul>
-							<?php query_posts('category_name=frettahlekkir&showposts=5'); ?>
-							<?php while ( have_posts() ) : the_post(); ?>
-								<li>
-									<?php get_template_part( 'newslinks', get_post_format() ); ?>
-								</li>
-								<?php $count++; ?>
-							<?php endwhile; ?>
-						</ul>
+			<div class="span6 <?php if($count % 3 == 0) echo 'clearfix'; ?>" >
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			</div>
+			<?php $count++; ?>
+		<?php endwhile; ?>
+		
+		<div class="span6">
+			<div class="shortcut-links">
+				<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>" title="Fleiri fréttir" class="news-archive-button">Fleiri fréttir</a>
+				<div class="links">
+					<div class="links-header">
+						<h2><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>">Fréttatenglar</a></h2>
+						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttahlekkir' ) ) ); ?>" class="more-links">Sjá alla tengla</a>
 					</div>
+					<ul>
+						<?php query_posts('category_name=frettahlekkir&showposts=5'); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<li>
+								<?php get_template_part( 'newslinks', get_post_format() ); ?>
+							</li>
+							<?php $count++; ?>
+						<?php endwhile; ?>
+					</ul>
 				</div>
 			</div>
+		</div>
 
 
 

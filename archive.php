@@ -29,6 +29,5 @@
 			</div>
 			
 		</div>
-		<div class="flag-stripe"><span class="white"><span class="red"></span></span>
 	</div><!-- end #main -->
 <?php get_footer(); ?>
