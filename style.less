@@ -165,7 +165,7 @@
 @main-menu-links: #285274;
 @news-links-external: #285274;
 @main-menu-links-hover: #cc4127;
-@link-color-hover: #d0d3c5; /*#cc4127;*/
+@link-color-hover: #285274; /*#cc4127;*/
 @footer-text: #d4d4d4;
 @footer-text-hover: #888;
 @error-msg: #DD2911;
@@ -200,14 +200,15 @@ h3 { font-size: @16px; }
 header.main-header h1 { .visuallyhidden; }
 .heading h1 { margin-bottom: 20px; padding-bottom: 6px; border-bottom: 1px solid @border-color; color: #285274; }
 
+
+/* General settings */
+
 em { font-style: italic; }
 strong, b { font-weight: 700; }
 a { color: @link-color; text-decoration: none; 
 	&:hover { color: @link-color-hover; }
 }
 p { margin-bottom: 10px; }
-
-/* Lists */
 
 ul { padding: 10px 20px; 
 	li { list-style: disc; padding: 4px 0; }
@@ -284,8 +285,8 @@ nav {
 nav.mainMenu { float: right; position: absolute; right: 0; bottom: 16px; 
 	ul { padding: 0; 
 		li { display: inline; list-style: none; padding: 10px 10px 15px 10px;
-			a { color: @flag-color-blue; font-size: 16px; font-weight: 600;
-				&:hover { color: @main-menu-links-hover; }
+			a { color: @flag-color-blue; font-size: 16px; font-weight: 600; 
+				&:hover { color: #1F78C7; }
 			}
 			ul { display: none; }
 			&.current_page_item, &.current-page-ancestor { /* border-bottom: 5px solid #285274; padding-bottom: 7px; */ background: @flag-color-blue;
@@ -510,12 +511,10 @@ body.search {
 	========================================================================== */
 footer, #push { height: 230px; clear: both; }
 footer { /*border-top: 30px solid @flag-color-blue; position: relative; */
-	color: @footer-text; 
-	text-shadow: 2px 2px 3px rgba(0,0,0,0.6); 
+	/* text-shadow: 2px 2px 3px rgba(0,0,0,0.6); */
 	height: 230px; 
 	background-image: url('/wp-content/themes/sampletheme/images/graphics/bg.noise.png'); /* -webkit-linear-gradient(top,#121212 0,#232323 40%,#232323 60%,#121212 100%); */ 
 	background-color: #241804; /* #1a1a19; #121212; */
-	color: #fff;
 	/*
 	background-image: linear-gradient(top, #121212 0%, #232323 40%, #232323 60%, #121212 100%);
 	background-image: -o-linear-gradient(top, #121212 0%, #232323 40%, #232323 60%, #121212 100%);
@@ -539,9 +538,9 @@ footer { /*border-top: 30px solid @flag-color-blue; position: relative; */
 		}
 	}
 
-	.footer-content { margin-top: 35px;
+	.footer-content { margin-top: 35px; color: #c7c7c7;
 		.row { margin-bottom: 0; }
-		a { color: #fff; text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+		a { color: #C7C7C7; 
 			&:hover { color: @footer-text-hover; }
 		}
 		&.entry-meta { height: auto; background: none; color: #fff; }

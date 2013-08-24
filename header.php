@@ -48,7 +48,14 @@
 						</div>
 						
 						<nav class="mainMenu" role="navigation">
-							<?php wp_nav_menu(array('menu' => 'MainMenu')); ?>
+
+						<?php 
+							$args = array(
+								'menu'	=> 'MainMenu'
+							);
+							wp_nav_menu($args);
+						?>
+
 						</nav>
 					</div>
 				</div>
