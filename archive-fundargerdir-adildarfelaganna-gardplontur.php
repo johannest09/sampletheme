@@ -1,7 +1,7 @@
 <?php
 /*
- * Template Name: Fréttasafn
- * Description: Birtir fréttasafn flokkað eftir mánuðum og árum
+ * Template Name: Fundargerðir - Garðplöntur
+ * Description: Birtir fundargerðir úr flokknum Garðplöntur
  */
 
 get_header(); ?>
@@ -20,14 +20,12 @@ get_header(); ?>
 					<?php while (have_posts()) : the_post(); ?>
 						<?php the_content(); ?>
 					<?php endwhile; ?>
-					<section class="archive-news">
-						<div class="archive-dropdown">
-							<label for="archive-dropdown" class="archive-title">Fréttasafn</label>
-			                <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
-								<option value=""><?php echo esc_attr( __( 'Veldu mánuð' ) ); ?></option> 								
-								<?php wp_get_archives('format=option&cat=' .get_cat_ID('Fréttir'). "'"); ?>
-							</select>
-		                </div>
+					
+					<section class="archive-dropdown">
+					    <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+							<option value=""><?php echo esc_attr( __( 'Veldu mánuð' ) ); ?></option> 								
+							<?php wp_get_archives('format=option&cat=' .get_cat_ID('Fundargerðir Garðplöntur'). "'"); ?>
+						</select>
 					</section>
 						                
 	                <section class="latest-news">
@@ -38,7 +36,7 @@ get_header(); ?>
 
                 			$args = array(
 							    'order'            	=> 'DESC',
-							    'category_name'    	=> 'frettir',
+							    'category_name'    	=> 'fundargerdir-gardplontur',
 							    'posts_per_page'	=> 5,
 							    'paged'				=> $paged
 						    );

@@ -1,7 +1,6 @@
 		<div id="push"></div>
 			</div><!-- end #wrapper -->
 			<footer>
-				<!--div class="flag-stripe"><div class="white-stripe"><div class="red-stripe"></div></div></div-->
 				<div class="wrap">
 					<div class="footer-content">
 						<div class="row">
@@ -18,7 +17,7 @@
 							<div class="span3">
 								<div class="contact-info">
 									<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Hafðu samband' ) ) ); ?>" class="contact-footer" title="hafa samband">Hafðu samband<span class="mail-icon"></span></a>
-									<a href="mailto=gardyrkja@gardyrkja.is" class="email">gardyrkja(hjá)gardyrkja.is</a>
+									<a href="mailto:gardyrkja@gardyrkja.is" class="email">gardyrkja(hjá)gardyrkja.is</a>
 									<div class="phone">Sími: 563 0328</div>
 								</div>
 							</div>
@@ -28,8 +27,8 @@
 										<h2>Flýtihlekkir</h2>
 									</div>
 									<div class="row">
-										<div class="span6"><nav><?php wp_nav_menu(array('menu' => 'footer links first', 'container' => '')); ?></nav></div>
-										<div class="span6"><nav><?php wp_nav_menu(array('menu' => 'footer links second', 'container' => '')); ?></nav></div>
+										<div class="span6"><nav><?php wp_nav_menu(array('menu' => 'footerLinksLeft', 'container' => '')); ?></nav></div>
+										<div class="span6"><nav><?php wp_nav_menu(array('menu' => 'footerLinksRight', 'container' => '')); ?></nav></div>
 									</div>
 								</div>
 							</div>

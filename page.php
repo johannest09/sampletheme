@@ -25,6 +25,23 @@
 						<?php if(is_page($page->ID)) : ?>
 							<?php get_template_part("fundargerdir"); ?>
 						<?php endif; ?>
+		
+						<?php
+							
+							if($post->ID == 9929)
+							{
+								get_template_part("fundargerdir-blom");
+							}
+							if($post->ID == 9931)
+							{
+								get_template_part("fundargerdir-gardplontur");
+							}
+							if($post->ID == 9933)
+							{
+								get_template_part("fundargerdir-graenmeti");
+							}
+
+						?>
 	
 					</div>
 				</div>

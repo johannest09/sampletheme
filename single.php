@@ -2,7 +2,8 @@
 <?php get_header(); ?>
 	<?php is_singular(); ?> 
 		<?php 
-			$category = get_the_category();
+			$categories = get_the_category();
+			//print_r($categories);
 		?>
 		<div id="main" role="main">
 			<div class="row">
@@ -12,23 +13,39 @@
 							<?php get_template_part( 'content', 'single', get_post_format() ); ?>
 						<?php endwhile; ?>
 					</div>
-					<?php if($category[0]->slug == 'ur-fundargerdum') : ?>
-						<div class="back-to-archives"><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fundargerðir' ) ) ); ?>">Til baka</a></div>
-					<?php else : ?>
-						<div class="back-to-archives"><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Fréttir' ) ) ); ?>">Til baka</a></div>
-					<?php endif; ?>
+					
+					<div class="button" onclick="history.go(-1)">Til baka</div>
 				</div>
 
 				<div class="span3">
 					<?php
-						if( 'ur-fundargerdum' == $category[0]->slug )
+						if($categories)
 						{
-							get_sidebar('fundargerdir');
+							foreach ($categories as $category) {
+								if($category->slug == "ur-fundargerdum")
+								{
+									get_sidebar('fundargerdir');
+								}
+								if($category->slug == "frettir")
+								{
+									get_sidebar('news');
+								}
+								if($category->slug == "fundargerdir-blom")
+								{
+									get_sidebar('blom');
+								}
+								if($category->slug == "fundargerdir-gardplontur")
+								{
+									get_sidebar('gardplontur');
+								}
+								if($category->slug =="fundagerdir-graenmeti")
+								{
+									get_sidebar('graenmeti');
+								}
+
+							}
 						}
-						elseif ( 'frettir' == $category[0]->slug ) 
-						{
-							get_sidebar('news');
-						}
+						
 					?>
 				</div>
 			</div>

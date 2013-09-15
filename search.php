@@ -26,7 +26,7 @@
 					}
 					else 
 					{
-						echo '<p>Leit þín að ' .get_search_query(). ' bar engan árangur</p>';
+						echo '<p>Leit þín að <b>' .get_search_query(). '</b> bar engan árangur</p>';
 					}
 				?>
 

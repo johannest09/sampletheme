@@ -44,36 +44,36 @@ if(function_exists('register_nav_menus')) {
     );
 }
 
-if ( ! function_exists( 'sampletheme_posted_on' ) ) :
+if ( ! function_exists( 'gardyrkja_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  * Create your own twentyeleven_posted_on to override in a child theme
  *
- * @since sampletheme 1.0
+ * @since gardyrkja 1.0
  */
-function sampletheme_posted_on() {
-    printf( __( '<span class="sep"></span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a> ', 'sampletheme' ),
+function gardyrkja_posted_on() {
+    printf( __( '<span class="sep"></span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a> ', 'gardyrkja' ),
         esc_url( get_permalink() ),
         esc_attr( get_the_time() ),
         esc_attr( get_the_date( 'c' ) ),
         esc_html( get_the_date('j F, Y') ),
         esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-        esc_attr( sprintf( __( 'View all posts by %s', 'sampletheme' ), get_the_author() ) ),
+        esc_attr( sprintf( __( 'View all posts by %s', 'gardyrkja' ), get_the_author() ) ),
         get_the_author()
     );
 }
 endif;
 
-if ( ! function_exists( 'sampletheme_link_date' ) ) :
+if ( ! function_exists( 'gardyrkja_link_date' ) ) :
 
-function sampletheme_link_date() {
-    printf( __( '<time class="entry-date" datetime="%3$s">%4$s</time>', 'sampletheme' ),
+function gardyrkja_link_date() {
+    printf( __( '<time class="entry-date" datetime="%3$s">%4$s</time>', 'gardyrkja' ),
         esc_url( get_permalink() ),
         esc_attr( get_the_time() ),
         esc_attr( get_the_date( 'c' ) ),
         esc_html( get_the_date('j M') ),
         esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-        esc_attr( sprintf( __( 'View all posts by %s', 'sampletheme' ), get_the_author() ) ),
+        esc_attr( sprintf( __( 'View all posts by %s', 'gardyrkja' ), get_the_author() ) ),
         get_the_author()
     );
 }
@@ -149,8 +149,9 @@ function content($limit) {
 // add post-thumbnail functionality
 
 if (function_exists('add_theme_support')) { 
-    add_theme_support('post-thumbnails');
-    set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails, set this to be your default size 
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 300, 150 );
+    //set_post_thumbnail_size( 150, 100, true ); // Normal post thumbnails, set this to be your default size 
     //add_image_size( 'single-post-image', 665, 9999 );
 }
 /*

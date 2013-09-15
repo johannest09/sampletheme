@@ -1,8 +1,12 @@
 <?php get_header(); ?>
 
-<div id="main-content">
-
-	<h2>Error 404 - Page Not Found</h2>
+<div id="main">
+	
+	<div class="page-not-found">
+		<h1>Síðan fannst ekki!</h1>
+		<p>Síðan sem þú baðst um fannst ekki. Vinsamlegast athugaðu hvort rétt vefslóð hafi verið slegin inn.</p>
+		<a href="/" class="button">Til baka á forsíðu</a>
+	</div>
 
 </div>
 

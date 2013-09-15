@@ -7,6 +7,8 @@ var App = {
 	Init: function() {
 		this.banner.Init();
 		this.colorBox.Init();
+
+		
 	},
 
 	banner: {
@@ -16,7 +18,7 @@ var App = {
 			var self = this;
 	        self.banner = $('#banner');
 	        self.bannerAnimation = null;
-	        self.interval = 70000;
+	        self.interval = 5000;
 	        
 	        $(window).resize(function()
 	        {

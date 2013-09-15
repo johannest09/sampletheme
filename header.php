@@ -19,11 +19,11 @@
 
 			// Add a page number if necessary:
 			if ( $paged >= 2 || $page >= 2 )
-				echo ' | ' . sprintf( __( 'Page %s', 'sampletheme' ), max( $paged, $page ) );
+				echo ' | ' . sprintf( __( 'Page %s', 'gardyrkja' ), max( $paged, $page ) );
 			?>
 		</title>
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url') ?>" />
-		<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/sampletheme/css/colorbox.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/gardyrkja/css/colorbox.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.3.custom.min.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.72664.js" type="text/javascript"></script>
@@ -47,16 +47,28 @@
 							</form>
 						</div>
 						
-						<nav class="mainMenu" role="navigation">
-
-						<?php 
+						<?php
 							$args = array(
-								'menu'	=> 'MainMenu'
+								'theme_location'  => '',
+								'menu'            => 'MainMenu',
+								'container'       => 'nav',
+								'container_class' => '',
+								'container_id'    => 'main-menu',
+								'menu_class'      => '',
+								'menu_id'         => '',
+								'echo'            => true,
+								'fallback_cb'     => 'wp_page_menu',
+								'before'          => '',
+								'after'           => '',
+								'link_before'     => '',
+								'link_after'      => '',
+								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								'depth'           => 0,
+								'walker'          => ''
 							);
+
 							wp_nav_menu($args);
 						?>
-
-						</nav>
 					</div>
 				</div>
 			</header>
