@@ -1,0 +1,90 @@
+
+/* === Mobile devices - Portrait (320px wide) === */
+
+@media only screen and (min-width : 320px) {
+
+}
+
+@media only screen and (max-width : 321px) {
+	body.home {
+		header.main-header {  
+			#logo { .row; }
+		}
+		#search-top { display: none; }
+	
+		#main-navigation { 
+			nav.main-menu { .row; 
+				ul {  margin-top: 80px; padding: 0; float: 0;
+					li { display: inline; list-style: none; padding: 6px 12px; border-radius: 4px;
+						&:hover { background: #DDE0E7; /* .transition(all, 0.15s, ease-in); */ }
+						a { color: @flag-color-blue; font-size: @15px; font-weight: 700;
+							&:hover { }
+						}
+						&.current_page_item, &.current-page-ancestor { background: @flag-color-blue;
+							a { color: #fff; }
+						}
+						ul { display: none; }
+					}
+				}
+			}
+		}
+		.contact { display: none; }
+
+		#banner { height: 180px;
+			.banner-wrap { max-width: 100%; width: 100%;
+				ul { height: 100%; padding: 0; list-style: none;
+					li { background-size: cover !important; }
+				}
+				.leftgradient, .rightgradient { display: none; }
+			}
+		}
+
+		#main { background: lightblue; width: 100%; margin: 0; padding: 0;
+			.maincontent { width: 100%; margin: 0; padding: 0;
+				.frontpage-news, .frontpage-news-links { width: 100%; margin: 0; }
+				.frontpage-news-links {
+					.instagram { display: none; }
+
+					.shortcut-buttons {
+						.btn { padding: 8px 0;
+							&.one, &.two { width: 100%; margin: 0; }
+						}
+					}
+				}
+			}
+		}
+		footer { display: none; }
+	}
+}
+
+
+
+/* === Mobile devices - Landscape (480px wide) === */
+
+@media only screen and (min-width : 480px) {
+
+}
+
+/* === Tablet devices - Portrait (768px wide) === */
+
+@media only screen and (min-width : 768px) {
+
+}
+
+/* === Tablet devices - Landscape (900px wide) === */
+
+@media only screen and (min-width : 900px) {
+
+}
+
+/* === Netbook devices (1100px wide) === */
+
+@media only screen and (min-width : 1100px) {
+
+}
+
+/* === Desktop devices (1300px wide) === */
+
+@media only screen and (min-width : 1300px) {
+
+}

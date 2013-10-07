@@ -10,6 +10,7 @@ get_header(); ?>
 			<div class="left-panel">
 				<?php get_template_part('subnavigation'); ?>
 			</div>
+			<!--?php dynamic_sidebar( 'Main Sidebar' ); ?-->
 		</div>
 		<div class="span9">
 
@@ -25,7 +26,6 @@ get_header(); ?>
 							<?php wp_get_archives('format=option&cat=' .get_cat_ID('Fréttir'). "'"); ?>
 						</select>
 					</section>
-						                
 	                <section class="latest-news">
                 		<?php
                 		    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;

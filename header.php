@@ -30,45 +30,12 @@
 
 		<?php wp_head(); ?>
 	</head>
-
 	<body <?php body_class('no-js'); ?>>
 		<div class="wrapper">
 			<header class="main-header">
 				<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-
-				<div class="wrap">
-					<div class="row">
-						<div class="span4"><a href="/" class="logo" title="Heim"><img src="/wp-content/uploads/2013/05/logo.png" alt="heim" /></a></div>
-						<!--div class="span5"><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Hafðu samband' ) ) ); ?>" class="contact" title="hafa samband">Hafa samband<span class="mail"></span></a></div-->
-						<div class="span8">
-							<form action="/" method="get" class="searchform">
-								<input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" placeholder="Leitarorð" />
-								<input type="submit" id="searchsubmit" />
-							</form>
-						</div>
-						
-						<?php
-							$args = array(
-								'theme_location'  => '',
-								'menu'            => 'MainMenu',
-								'container'       => 'nav',
-								'container_class' => '',
-								'container_id'    => 'main-menu',
-								'menu_class'      => '',
-								'menu_id'         => '',
-								'echo'            => true,
-								'fallback_cb'     => 'wp_page_menu',
-								'before'          => '',
-								'after'           => '',
-								'link_before'     => '',
-								'link_after'      => '',
-								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-								'depth'           => 0,
-								'walker'          => ''
-							);
-
-							wp_nav_menu($args);
-						?>
-					</div>
+				<a href="#main" class="visuallyhidden">Beint á efnisyfirlit síðunnar</a>
+				<div id="logo">
+					<a href="/" title="Heim"><img src="/wp-content/uploads/2013/05/logo.png" alt="heim" /></a>
 				</div>
 			</header>

@@ -14,6 +14,32 @@ if (function_exists('register_sidebar')) {
     ));
 }
 
+function your_widget_display($args) {
+   extract($args);
+   echo $before_widget;
+   echo $before_title . 'My Unique Widget' . $after_title;
+   echo $after_widget;
+   // print some HTML for the widget to display here
+   echo "Your Widget Test";
+}
+
+wp_register_sidebar_widget(
+    'your_widget_1',        // your unique widget id
+    'Your Widget',          // widget name
+    'your_widget_display',  // callback function
+    array(                  // options
+        'description' => 'Description of what your widget does'
+    )
+);
+
+register_sidebar(array(
+  'name' => __( 'Login sidebar' ),
+  'id' => 'loginSidebar',
+  'description' => __( 'Login sidebar' ),
+  'before_title' => '<h1>',
+  'after_title' => '</h1>'
+));
+
 // unregister all default WP Widgets
 /*
 function unregister_default_wp_widgets() {
@@ -119,7 +145,7 @@ function excerpt($limit) {
     $excerpt = explode(' ', get_the_excerpt(), $limit);
     if (count($excerpt)>=$limit) {
         array_pop($excerpt);
-        $excerpt = implode(" ",$excerpt).'...';
+        $excerpt = implode(" ",$excerpt).'..';
     } 
     else {
         $excerpt = implode(" ",$excerpt);
@@ -132,7 +158,7 @@ function content($limit) {
     $content = explode(' ', get_the_content(), $limit);
     if (count($content)>=$limit) {
         array_pop($content);
-        $content = implode(" ",$content).'...';
+        $content = implode(" ",$content).'..';
     } 
     else 
     {

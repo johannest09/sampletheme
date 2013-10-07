@@ -11,6 +11,7 @@ get_header(); ?>
 			<div class="left-panel">
 				<?php get_template_part('subnavigation'); ?>
 			</div>
+			<!--?php dynamic_sidebar( 'Main Sidebar' ); ?-->
 		</div>
 		<div class="span9">
 

@@ -5,6 +5,8 @@
 				<div class="left-panel">
 					<?php get_template_part('subnavigation'); ?>
 				</div>
+				
+				<!--?php dynamic_sidebar( 'Main Sidebar' ); ?-->
 			</div>
 			<div class="span9">
 				<div class="content">
@@ -15,32 +17,32 @@
 							<?php the_content(); ?>
 						<?php endwhile; ?>
 						<?php wp_reset_query(); ?>
-						
-						<?php $page = get_page_by_title("Fréttahlekkir"); ?>
-						<?php if(is_page($page->ID)) : ?>
-							<?php get_template_part( 'external', 'links', get_post_format() ); ?>
-						<?php endif; ?>
 
-						<?php $page = get_page_by_title("Fundargerðir"); ?>
-						<?php if(is_page($page->ID)) : ?>
-							<?php get_template_part("fundargerdir"); ?>
-						<?php endif; ?>
-		
 						<?php
-							
-							if($post->ID == 9929)
-							{
-								get_template_part("fundargerdir-blom");
-							}
-							if($post->ID == 9931)
-							{
-								get_template_part("fundargerdir-gardplontur");
-							}
-							if($post->ID == 9933)
-							{
-								get_template_part("fundargerdir-graenmeti");
-							}
+							if ( is_user_logged_in()) {
 
+								$page = get_page_by_title("Fréttahlekkir");
+								if(is_page($page->ID)) {
+									get_template_part( 'external', 'links', get_post_format());
+								}
+								$page = get_page_by_title("Fundargerðir");
+								if(is_page($page->ID)) {
+									get_template_part("fundargerdir");
+								}
+
+								if($post->ID == 9929)
+								{
+									get_template_part("fundargerdir-blom");
+								}
+								if($post->ID == 9931)
+								{
+									get_template_part("fundargerdir-gardplontur");
+								}
+								if($post->ID == 9933)
+								{
+									get_template_part("fundargerdir-graenmeti");
+								}
+							}
 						?>
 	
 					</div>
