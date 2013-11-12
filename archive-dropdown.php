@@ -9,6 +9,6 @@
     <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
 		<option value=""><?php echo esc_attr( __( 'Veldu mánuð' ) ); ?></option> 								
 		<?php wp_get_archives('format=option&cat=' .get_query_var('cat'). "'"); ?>
-
 	</select>
+	<div class="button" onclick="history.go(-1)">Til baka</div>
 </section>

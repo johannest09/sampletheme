@@ -1,3 +1,12 @@
+<?php while (have_posts()) : the_post(); ?>
+	<?php the_content(); ?>
+<?php endwhile; ?>
+<section class="archive-dropdown">
+    <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+		<!--option value=""><?php echo esc_attr( __( 'Veldu mánuð' ) ); ?></option--> 								
+		<?php wp_get_archives('format=option&cat=' .get_cat_ID('Úr fundargerðum'). "'"); ?>
+	</select>
+</section>
 <?php
     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$tmp = $wp_query;

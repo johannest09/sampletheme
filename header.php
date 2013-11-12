@@ -26,6 +26,8 @@
 		<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/gardyrkja/css/colorbox.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.3.custom.min.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<script src="<?php echo get_template_directory_uri(); ?>/js/lib.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js" type="text/javascript"></script>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.72664.js" type="text/javascript"></script>
 
 		<?php wp_head(); ?>
@@ -38,4 +40,5 @@
 				<div id="logo">
 					<a href="/" title="Heim"><img src="/wp-content/uploads/2013/05/logo.png" alt="heim" /></a>
 				</div>
+				<?php include (TEMPLATEPATH . '/inc/main-navigation.php' ); ?>
 			</header>

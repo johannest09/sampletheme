@@ -78,7 +78,7 @@ if ( ! function_exists( 'gardyrkja_posted_on' ) ) :
  * @since gardyrkja 1.0
  */
 function gardyrkja_posted_on() {
-    printf( __( '<span class="sep"></span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a> ', 'gardyrkja' ),
+    printf( __( '<span class="sep"></span><time class="entry-date" datetime="%3$s">%4$s</time> ', 'gardyrkja' ),
         esc_url( get_permalink() ),
         esc_attr( get_the_time() ),
         esc_attr( get_the_date( 'c' ) ),
@@ -187,3 +187,59 @@ if(function_exists('add_image_size')) {
     //add_image_size( 'custom-2', 300, 200, false ); // Default is false, "soft proportional crop"
 }
 */
+
+function gardyrkja_remove_gallery_css( $css ) {
+    return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
+}
+add_filter( 'gallery_style', 'gardyrkja_remove_gallery_css' );
+
+function wp_get_attachment( $attachment_id ) {
+
+    $attachment = get_post( $attachment_id );
+    return array(
+        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'href' => get_permalink( $attachment->ID ),
+        'src' => $attachment->guid,
+        'title' => $attachment->post_title
+    );
+}
+
+function the_post_thumbnail_caption($the_post) {
+
+  $thumbnail_id    = get_post_thumbnail_id($the_post->ID);
+  $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+  if ($thumbnail_image && isset($thumbnail_image[0])) {
+    echo '<span class="image-caption">'.$thumbnail_image[0]->post_excerpt.'</span>';
+  }
+}
+
+function the_post_thumbnail_has_caption($the_post) {
+
+  $thumbnail_id    = get_post_thumbnail_id($the_post->ID);
+  $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+  if ($thumbnail_image && isset($thumbnail_image[0])) {
+    
+    if($thumbnail_image[0]->post_excerpt != null) {
+        return 1;
+    }
+    else
+        return 0;
+  }
+  else
+    return 0;
+}
+
+function highlight_search_term($text){
+    if(is_search()){
+        $keys = implode('|', explode(' ', get_search_query()));
+        $text = preg_replace('/(' . $keys .')/iu', '<span class="search-term">\0</span>', $text);
+    }
+    return $text;
+}
+add_filter('the_excerpt', 'highlight_search_term');
+add_filter('the_title', 'highlight_search_term');
+

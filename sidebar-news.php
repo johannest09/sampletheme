@@ -8,5 +8,6 @@
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'newslist', get_post_format() ); ?>
 		<?php endwhile; ?>
+		<?php wp_reset_query(); ?>
 	</div>
 </aside>

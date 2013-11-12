@@ -1,17 +1,17 @@
 <?php get_header(); ?>
-	<div id="main">
+	<div id="main" class="archive">
 		<div class="row">
 			
-			<div class="archive content">
+			<div class="content">
 				<?php if (have_posts()) : ?>
 					<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 					
 					<div class="heading">
-						<h1>Yfirlit - <?php the_time('F, Y'); ?></h1>
+						<h1>Yfirlit <span><?php the_time('F, Y'); ?></span></h1>
 					</div>
 					
 					<?php get_template_part('archive-dropdown'); ?>
-					
+
 					<?php while (have_posts()) : the_post(); ?>
 						<div <?php post_class('archive-item') ?>>
 							<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>

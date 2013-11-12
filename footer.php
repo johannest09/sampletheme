@@ -17,38 +17,16 @@
 							<!--?php wp_register(); ?--> 
 
 						</div>
-						<a href="#" class="english" title="english"></a>
+						<a href="/english/" class="english" title="english">English</a>
 						<form action="/" method="get" class="searchform">
+							<label for="s" class="visuallyhidden">Leit</label>
 							<input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" placeholder="Leitarorð" />
-							<input type="submit" id="searchsubmit" />
+							<input type="submit" id="searchsubmit" value="Leita"/>
 						</form>
 					</div>
 				</div>
 			</div>
-			<div id="main-navigation">
-				<?php
-					$args = array(
-						'theme_location'  => '',
-						'menu'            => 'MainMenu',
-						'container'       => 'nav',
-						'container_class' => 'main-menu',
-						'container_id'    => '',
-						'menu_class'      => '',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'depth'           => 0,
-						'walker'          => ''
-					);
-
-					wp_nav_menu($args);
-				?>
-			</div>
+			
 			<footer>
 				<div class="wrap">
 					<div class="footer-content">
@@ -82,9 +60,6 @@
 			<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Hafðu samband' ) ) ); ?>" class="contact" title="hafa samband">Hafa samband</a>
 
 			<?php wp_footer(); ?>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/lib.js" type="text/javascript"></script>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js" type="text/javascript"></script>
-			
 		<!-- Don't forget analytics -->
 		
 	</body>
